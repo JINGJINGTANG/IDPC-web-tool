@@ -32,50 +32,64 @@
 
 		</div>
 
-<!-- 		<div id="search">
-                <select id="variables" class="btn">
-                    <option name="ts">Team Size</option>
-                    <option name="pls">Patient List Size</option>
-                    <option name="pr">Provider Remuneration</option>
-                </select>
-
-                <select id="outcomes" class="btn">
-                    <option name="ps">Patient Satisfaction</option>
-                    <option name="co">Collabration</option>
-                    <option name="db">Diabetes</option>
-                    <option name="as">Asthma</option>
-                </select>
-                <button type="button" class="btn btn-success" onclick="result()">Search</button>
-                <button type="button" class="btn btn-info" onclick="show()">View All</button>
-			</div> -->
-
 		<div id="wrapper">
-
-			<div id="layerOne">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-1">
-							<div class="entries">Layer1 1-1</div>
-						</div>
-						<div class="col-md-1">
-							<div class="entries">Layer1 1-2</div>
-						</div>
-						<div class="col-md-1">
-							<div class="entries">Layer1 1-3</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="entries">Layer1 2-1
-						</div>
-						<div class="entries">Layer1 2-2
-						</div>
-						<div class="entries">Layer1 2-3
-						</div>
-					</div>
+			<!-- NOTE: Added temporarily. Need to be cleaned in the next steps -->
+			<div id="search" style="border: 1px solid red; text-align:center; margin: 5rem 0;">
+				<div class="btn-group" style="margin-right: 2rem">
+				  <button type="button" class="btn btn-default">Select Here</button>
+				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu">
+				  	<li class="dropdown-header">Team Process</li>
+				    <li><a href="#">Perception of Team Functioning</a></li>
+				    <li><a href="#">Measured Team Functioning</a></li>
+				    <li class="dropdown-header">Diabetes Care</li>
+				    <li><a href="#">Care Process</a></li>
+				    <li><a href="#">Patient Outcomes</a></li>
+				  </ul>
 				</div>
+				<!-- NOTE: Added temporarily. Need to be cleaned in the next steps -->
+				<div class="btn-group" style="margin-right: 2rem">
+				  <button type="button" class="btn btn-default">Select Here</button>
+				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu">
+				  	<li class="dropdown-header">Policies and Procedures</li>
+				    <li><a href="#">Clear Common Goals</a></li>
+				    <li><a href="#">Roles and Responsibilities</a></li>
+				    <li><a href="#">Process Guidelines</a></li>
+				    <li class="dropdown-header">Team Composition</li>
+				    <li><a href="#">Add a Nurse</a></li>
+				    <li><a href="#">Add a Pharmacist</a></li>
+				    <li><a href="#">Add a Dietician</a></li>
+				    <li class="dropdown-header">Provider Remuneration</li>
+				    <li><a href="#">FFS to Physician</a></li>
+				    <li><a href="#">Salaries to All</a></li>
+				    <li><a href="#">Other Mixed Remuneration</a></li>
+				  </ul>
+				</div>
+           		<button type="button" class="btn btn-success">Search</button>
 			</div>
 
+
+
+			<!-- NOTE: Added temporarily. Need to be cleaned in the next steps -->
+			<div style="border: 1px solid black; width: 10%; height: 320px; float: left; margin-right: 5%">
+
+			</div>
+			<div id="layerOne" style="border: 1px solid blue; width: 80%;text-align: center; float: left">
+				<div class="entries">Layer1 1-1</div>
+				<div class="entries">Layer1 1-2</div>
+				<div class="entries">Layer1 1-3</div>
+
+				<div class="entries">Layer1 2-1</div>
+				<div class="entries">Layer1 2-2</div>
+				<div class="entries">Layer1 2-3</div>
+			</div>
 
 			<div id="layerTwo">
 				<a><span aria-hidden="true">&larr;</span> Back</a>
@@ -86,6 +100,7 @@
 				<div class="entries"></div>
 				<div class="entries"></div>
 			</div>
+
 		</div>
 
 
