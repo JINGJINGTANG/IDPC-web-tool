@@ -109,8 +109,9 @@ html, body {
 #search {
 	border: 1px solid red;
 	text-align:center; 
-	margin: 5rem 0;
+	margin: 5rem 0 7rem 0;
 }
+
 #layerOne {
 	border: 1px solid blue;
 	text-align: center; 
@@ -139,32 +140,31 @@ html, body {
 }
 
 .variables {
-	min-width: 28%;
+	min-width: 28.33%;
 	border: 1px solid red;
 	margin-bottom: 2rem;
-	font-size: 2rem;
+	font-size: 1.5em;
 }
 
 .outcomes {
 	min-width: 15%;
 	border: 1px solid red;
-	font-size: 2rem;
+	font-size: 1.5em;
 }
 
 .header {
-	height: 150px;
+	height: 200px;
 	line-height: 150px;
 }
 
 .entries {
 	display: inline-block;
-	min-height: 150px;
-	min-width: 28%;
+	min-height: 200px;
+	min-width: 28.33%;
 	line-height: 150px;
 	float: left;
 	box-shadow: 5px 5px 5px #999;
   	border-radius: 10px;
-	margin-bottom: 2rem;
 	text-align: center;
 	border: 1px solid red;
 }

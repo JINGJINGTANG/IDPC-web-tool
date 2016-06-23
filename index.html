@@ -7,6 +7,7 @@
 		<meta name="description" content="A web based tool for medical Canadian Interdisplinary Primary Care teams and researchers to improve their decision making regarding medical teams and treatment.">
 		<meta name="author" content="">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="webtool.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -37,43 +38,41 @@
 			<!-- NOTE: Added temporarily. Need to be cleaned in the next steps -->
 			<div id="search">
 				<div class="btn-group" style="margin-right: 2rem">
-				  <button type="button" class="btn btn-info">Select Here</button>
-				  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <button type="button" class="btn btn-info btn-lg">Select to search</button>
+				  <button type="button" class="btn btn-info dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <span class="caret"></span>
-				    <span class="sr-only">Toggle Dropdown</span>
 				  </button>
 				  <ul class="dropdown-menu">
-				  	<li class="dropdown-header">Team Process</li>
-				    <li><a href="#">Perception of Team Functioning</a></li>
-				    <li><a href="#">Measured Team Functioning</a></li>
-				    <li class="dropdown-header">Diabetes Care</li>
-				    <li><a href="#">Care Process</a></li>
-				    <li><a href="#">Patient Outcomes</a></li>
+				  	<li class="dropdown-header"><i class="fa fa-refresh" aria-hidden="true"></i> Team Process</li>
+				    <li><a href="#"><i class="fa fa-street-view" aria-hidden="true"></i> Perception of Team Functioning</a></li>
+				    <li><a href="#"><i class="fa fa-line-chart" aria-hidden="true"></i> Measured Team Functioning</a></li>
+				    <li class="dropdown-header"><i class="fa fa-medkit" aria-hidden="true"></i> Diabetes Care</li>
+				    <li><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Care Process</a></li>
+				    <li><a href="#"><i class="fa fa-bed" aria-hidden="true"></i> Patient Outcomes</a></li>
 				  </ul>
 				</div>
 				<!-- NOTE: Added temporarily. Need to be cleaned in the next steps -->
 				<div class="btn-group" style="margin-right: 2rem">
-				  <button type="button" class="btn btn-warning">Select Here</button>
-				  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <button type="button" class="btn btn-warning btn-lg">Select to search</button>
+				  <button type="button" class="btn btn-warning dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    <span class="caret"></span>
-				    <span class="sr-only">Toggle Dropdown</span>
 				  </button>
 				  <ul class="dropdown-menu">
-				  	<li class="dropdown-header">Policies and Procedures</li>
-				    <li><a href="#">Clear Common Goals</a></li>
-				    <li><a href="#">Roles and Responsibilities</a></li>
-				    <li><a href="#">Process Guidelines</a></li>
-				    <li class="dropdown-header">Team Composition</li>
-				    <li><a href="#">Add a Nurse</a></li>
-				    <li><a href="#">Add a Pharmacist</a></li>
-				    <li><a href="#">Add a Dietician</a></li>
-				    <li class="dropdown-header">Provider Remuneration</li>
-				    <li><a href="#">FFS to Physician</a></li>
-				    <li><a href="#">Salaries to All</a></li>
-				    <li><a href="#">Other Mixed Remuneration</a></li>
+				  	<li class="dropdown-header"><i class="fa fa-hospital-o" aria-hidden="true"></i> Policies and Procedures</li>
+				    <li><a href="#"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Clear Common Goals</a></li>
+				    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Roles and Responsibilities</a></li>
+				    <li><a href="#"><i class="fa fa-map-signs" aria-hidden="true"></i> Process Guidelines</a></li>
+				    <li class="dropdown-header"><i class="fa fa-users" aria-hidden="true"></i> Team Composition</li>
+				    <li><a href="#"><i class="fa fa-heartbeat" aria-hidden="true"></i> Add a Nurse</a></li>
+				    <li><a href="#"><i class="fa fa-user-md" aria-hidden="true"></i> Add a Pharmacist</a></li>
+				    <li><a href="#"><i class="fa fa-heartbeat" aria-hidden="true"></i> Add a Dietician</a></li>
+				    <li class="dropdown-header"><i class="fa fa-dollar" aria-hidden="true"></i> Provider Remuneration</li>
+				    <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i> FFS to Physician</a></li>
+				    <li><a href="#"><i class="fa fa-dollar" aria-hidden="true"></i> Salaries to All</a></li>
+				    <li><a href="#"><i class="fa fa-pie-chart" aria-hidden="true"></i> Other Mixed Remuneration</a></li>
 				  </ul>
 				</div>
-           		<button type="button" class="btn btn-success">Search</button>
+           		<button type="button" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-search"></span> Search</button>
 			</div>
 
 
@@ -82,15 +81,15 @@
 
 			<div id="layerOne">
 				<div class="labels outcomes"></div>
-				<div class="labels variables"><span class="label label-info">Policies and Procedures</span></div>
-				<div class="labels variables"><span class="label label-info">Team Composition</span></div>
-				<div class="labels variables"><span class="label label-info">Provider Remuneration</span></div>
+				<div class="labels variables"><span class="label label-info"><i class="fa fa-hospital-o" aria-hidden="true"></i> Policies and Procedures</span></div>
+				<div class="labels variables"><span class="label label-info"><i class="fa fa-users" aria-hidden="true"></i> Team Composition</span></div>
+				<div class="labels variables"><span class="label label-info"><i class="fa fa-dollar" aria-hidden="true"></i> Provider Remuneration</span></div>
 
-				<div class="labels outcomes header"><span class="label label-warning">Team Process</span></div>
+				<div class="labels outcomes header"><span class="label label-warning"><i class="fa fa-refresh" aria-hidden="true"></i> Team Process</span></div>
 				<div class="entries">Example Study 1-1</div>
 				<div class="entries">Example Study 1-2</div>
 				<div class="entries">Example Study 1-3</div>
-				<div class="labels outcomes header"><span class="label label-warning">Diabetes Care</span></div>
+				<div class="labels outcomes header"><span class="label label-warning"><i class="fa fa-medkit" aria-hidden="true"></i> Diabetes Care</span></div>
 				<div class="entries">Example Study 2-1</div>
 				<div class="entries">Example Study 2-2</div>
 				<div class="entries">Example Study 2-3</div>
