@@ -50,7 +50,6 @@ html, body {
 	position: absolute;
 	font-size: 3rem;
 	font-weight: 100;
-
 }
 
 .explore {
@@ -102,9 +101,20 @@ html, body {
 #wrapper {
 	margin: auto;
 	max-width: 80%;
-	height: 600px;
+	height: 500px;
 	border: 3px solid red;
 	height: 100%;
+
+}
+#search {
+	border: 1px solid red;
+	text-align:center; 
+	margin: 5rem 0;
+}
+#layerOne {
+	border: 1px solid blue;
+	text-align: center; 
+	display: inline-block;
 }
 
 #layerTwo a {
@@ -129,14 +139,16 @@ html, body {
 }
 
 .variables {
-	min-width: 30%;
+	min-width: 28%;
 	border: 1px solid red;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
+	font-size: 2rem;
 }
 
 .outcomes {
-	min-width: 10%;
+	min-width: 15%;
 	border: 1px solid red;
+	font-size: 2rem;
 }
 
 .header {
@@ -147,12 +159,14 @@ html, body {
 .entries {
 	display: inline-block;
 	min-height: 150px;
-	min-width: 30%;
+	min-width: 28%;
+	line-height: 150px;
 	float: left;
 	box-shadow: 5px 5px 5px #999;
   	border-radius: 10px;
 	margin-bottom: 2rem;
 	text-align: center;
+	border: 1px solid red;
 }
 
 .entries:hover {
