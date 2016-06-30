@@ -100,9 +100,9 @@ html, body {
 
 #wrapper {
 	margin: auto;
-	max-width: 80%;
-	height: 500px;
-	height: 100%;
+	max-width: 95%;
+	height: 1200px;
+/*	height: 100%;*/
 	padding-top: 3rem;
 }
 
@@ -139,35 +139,63 @@ html, body {
 }
 
 .variables {
-	min-width: 25%;
 	margin-bottom: 2rem;
+	margin-left: 1%;
 	font-size: 1.5em;
+}
+
+.first {
+	width: 15.4%;
+
+}
+
+.second {
+	width: 24%;
 }
 
 .outcomes {
-	min-width: 15%;
+	width: 18%;
 	font-size: 1.5em;
-	height: 1px;
+	overflow: scroll;
+	margin-bottom: 1%;
+}
 
+.front {
+	width: 18%;
+}
+
+.back {
+	width: 25%;
 }
 
 .header {
-	height: 200px;
-	line-height: 200px;
+	height: 100px;
+	line-height: 100px;
 }
 
 .entries {
 	display: inline-block;
-	min-height: 200px;
-	min-width: 25%;
-	line-height: 200px;
 	float: left;
 	box-shadow: 5px 5px 5px #999;
   	border-radius: 5px;
 	text-align: center;
-	background-color: #79BD9A;
+/*	background-color: #79BD9A;*/
+	margin-bottom: 1%;
+	margin-left: 1%;
 	border: 1px solid #999;
 	opacity: 0.8;
+}
+
+.one {
+	max-height: 100px;
+	min-width: 15.4%;
+	line-height: 100px;
+}
+
+.two {
+	max-height: 100px;
+	min-width: 24%;
+	line-height: 100px;
 }
 
 .studies {
@@ -180,6 +208,12 @@ html, body {
 	opacity: 1;
 }
 
+.getBack {
+	margin: 0;
+	text-align: left;
+	width: 75%;
+	margin: auto;
+}
 #footer {
 	text-align: center;
 	padding-top: 50px;

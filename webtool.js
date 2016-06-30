@@ -1,24 +1,31 @@
 var idpc = angular.module('idpc', [])
 	.controller('mainCtrl', function($scope) {
-		var variables = ['Policies and Procedures', 'Team Composition', 'Provider Remuneration'];
-		var outcomes = ['Team Process', 'Diabetes Care'];
-		$scope.variable1 = variables[0];
-		$scope.variable2 = variables[1];
-		$scope.variable3 = variables[2];
+		$scope.variables = ['Policies & Procedures', 'Team Composition', 'Provider Remuneration', 'Team Funding', 'Team Governance'];
+		$scope.outcomes = ['Team Process', 'Health Services Process', 'Diabetes Care', 'Hypertension Care', 'Ashma Care', 'Ischemic Heart Disease Care', 'Other Chronic Disease Mgmt Outcomes'];
+		$scope.views = {
+						layerOne: "layerOne.html"
+					   };
 
-		$scope.outcome1 = outcomes[0];
-		$scope.outcome2 = outcomes[1];
-
-		$scope.studies = [{id: 'pp_tp', study: 'Example 1-1'},
-						  {id: 'tc_tp', study: 'Example 1-2'},
-						  {id: 'pr_tp', study: 'Example 1-3'},
-						  {id: 'pp_dc', study: 'Example 2-1'},
-						  {id: 'tc_dc', study: 'Example 2-2'},
-						  {id: 'pr_dc', study: 'Example 2-3'}
+		$scope.studies = [{id: 'pp_tp', study: 'Example Text'},
+						  {id: 'tc_tp', study: 'Example Text'},
+						  {id: 'pr_tp', study: 'Example Text'},
+						  {id: 'pr_tp', study: 'Example Text'},
+						  {id: 'pr_tp', study: 'Example Text'},
+						  {id: 'pp_dc', study: 'Example Text'},
+						  {id: 'tc_dc', study: 'Example Text'},
+						  {id: 'pr_dc', study: 'Example Text'}
 						  ];
 
 		$scope.toLayerTwo = function(id) {
-			alert(id);
+			$scope.views = {
+						layerOne: "layerTwo.html"
+					   };
+		};
+
+		$scope.toLayerOne = function(id) {
+			$scope.views = {
+						layerOne: "layerOne.html"
+					   };
 		};
 
 
