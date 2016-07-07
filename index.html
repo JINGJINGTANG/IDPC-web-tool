@@ -13,112 +13,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<title>IDPC Web Tool</title>
-
-		<script type="text/ng-template" id="layerOne.html">
-
-				<div class="labels outcomes"></div>
-				<div class="labels variables first" ng-repeat="variable in variables">
-					<span class="label label-info">{{ variable }}</span>
-				</div>
-
-				<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[0] }}</span></div>
-				<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[1] }}</span></div>
-				<div class="entries one" ng-repeat="study in studies" ng-if="$index > 2">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[2] }}</span></div>
-				<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[3] }}</span></div>
-				<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[4] }}</span></div>
-				<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[5] }}</span></div>
-				<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[6] }}</span></div>
-				<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-		</script>
-
-		<script type="text/ng-template" id="layerTwo.html">
-		<div style="font-size: 2rem; color: red;" class="getBack" ng-click="toLayerOne()"><button class="btn btn-default btn-lg">Back</button></div><br>
-				<div class="labels outcomes back"></div>
-				<div class="labels variables second">
-					<span class="label label-info">Clear Common Goals</span>
-				</div>
-				<div class="labels variables second">
-					<span class="label label-info">Roles & Responsibilities</span>
-				</div>
-				<div class="labels variables second">
-					<span class="label label-info">Process Guidelines</span>
-				</div>
-
-				<div class="labels outcomes header back"><span class="label label-warning"> Perception of Team</span></div>
-				<div class="entries two" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 3" data-toggle="modal" data-target="#ex1">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header back"><span class="label label-warning"> Functioning</span></div>
-				<div class="entries two" ng-repeat="study in studies" ng-if="$index < 3">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-				<div class="labels outcomes header back"><span class="label label-warning"> Measured Team Functioning</span></div>
-				<div class="entries two" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 3" ng-click="toLayerTwo(study.id)">
-					<span class="studies">{{ study.study }}</span>
-				</div>
-
-		<div id="ex1" class="modal fade" role="dialog">
-	      <div class="modal-dialog modal-lg">
-	        <div class="modal-content">
-	          <div class="modal-header">
-	            <button type="button" class="close" data-dismiss="modal">&times;</button>
-	            <h4 class="modal-title">Example study</h4>
-	          </div>
-	          <div class="modal-body">
-	            <p>
-	            	Example
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	Text
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	<br >
-	            	text
-	            </p>
-	          </div>
-	          <div class="modal-footer">
-	            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-	          </div>
-	        </div>
-	      </div>
-    	</div>
-
-		</script>
 	</head>
 
 	<body>
 		<div id="header">
-			
 				<div id="navbar">
 					<h2>IDPC WEB TOOL</h2>
 				</div>
@@ -136,7 +34,7 @@
 
 		</div>
 
-		<div id="wrapper">
+		<div id="wrapper" ng-controller="mainCtrl">
 			<!-- NOTE: Added temporarily. Need to be cleaned in the next steps -->
 			<div id="search">
 				<div class="btn-group" style="margin-right: 2rem">
@@ -179,10 +77,113 @@
 
 			<!-- NOTE: Added temporarily. Need to be cleaned in the next steps -->
 
-			<div id="layerOne" ng-controller="mainCtrl" ng-include="views.layerOne">
-			</div>
-			
+			<div class="layerOne">
+				<div id="layer_one">
+					<div class="labels outcomes"></div>
+					<div class="labels variables first" ng-repeat="variable in variables">
+						<span class="label label-info">{{ variable }}</span>
+					</div>
 
+					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[0] }}</span></div>
+					<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[1] }}</span></div>
+					<div class="entries one" ng-repeat="study in studies" ng-if="$index > 2">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[2] }}</span></div>
+					<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[3] }}</span></div>
+					<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[4] }}</span></div>
+					<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[5] }}</span></div>
+					<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[6] }}</span></div>
+					<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+				</div>
+
+
+
+
+				<div id="layer_two">
+					<div class="labels outcomes back"></div>
+					<div class="labels variables second">
+						<span class="label label-info">Clear Common Goals</span>
+					</div>
+					<div class="labels variables second">
+						<span class="label label-info">Roles & Responsibilities</span>
+					</div>
+					<div class="labels variables second">
+						<span class="label label-info">Process Guidelines</span>
+					</div>
+
+					<div class="labels outcomes header back"><span class="label label-warning"> Perception of Team</span></div>
+					<div class="entries two" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 3" data-toggle="modal" data-target="#ex1">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header back"><span class="label label-warning"> Functioning</span></div>
+					<div class="entries two" ng-repeat="study in studies" ng-if="$index < 3">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+					<div class="labels outcomes header back"><span class="label label-warning"> Measured Team Functioning</span></div>
+					<div class="entries two" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 3" ng-click="toLayerTwo(study.id)">
+						<span class="studies">{{ study.study }}</span>
+					</div>
+				</div>
+
+			<div class="change">
+				<div class="getBack" ng-click="toLayerOne()"><button class="btn btn-default btn-lg">Back</button>
+				</div>
+			</div>
+
+					<div id="ex1" class="modal fade" role="dialog">
+				      <div class="modal-dialog modal-lg">
+				        <div class="modal-content">
+				          <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal">&times;</button>
+				            <h4 class="modal-title">Example study</h4>
+				          </div>
+				          <div class="modal-body">
+				            <p>
+				            	Example
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	Text
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	<br >
+				            	text
+				            </p>
+				          </div>
+				          <div class="modal-footer">
+				            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+				          </div>
+				        </div>
+				      </div>
+			    	</div>
+    		</div>
 		</div>
 
 		<div id="footer">

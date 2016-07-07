@@ -100,10 +100,10 @@ html, body {
 
 #wrapper {
 	margin: auto;
-	max-width: 95%;
-	height: 1200px;
 /*	height: 100%;*/
+	width: 100%;
 	padding-top: 3rem;
+	text-align: center;
 }
 
 #search {
@@ -112,10 +112,21 @@ html, body {
 	margin-bottom: 7rem;
 }
 
-#layerOne {
-	text-align: center; 
+.layerOne {
+	text-align: center;
+	width: 90%;
 	display: inline-block;
+	margin: auto;
 }
+
+.change {
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	font-size: 2rem;
+	margin: 40px 0 20px 0;
+}
+
 
 #layerTwo a {
 	float: left;
@@ -153,11 +164,16 @@ html, body {
 	width: 24%;
 }
 
+.label-warning {
+	white-space: normal;
+}
+
 .outcomes {
 	width: 18%;
 	font-size: 1.5em;
-	overflow: scroll;
 	margin-bottom: 1%;
+	text-align: right;
+	overflow: auto;
 }
 
 .front {
@@ -165,19 +181,19 @@ html, body {
 }
 
 .back {
-	width: 25%;
+	width: 15%;
 }
 
 .header {
 	height: 100px;
-	line-height: 100px;
+	padding-top: 25px;
 }
 
 .entries {
 	display: inline-block;
 	float: left;
 	box-shadow: 5px 5px 5px #999;
-  	border-radius: 5px;
+  	border-radius: 15px;
 	text-align: center;
 /*	background-color: #79BD9A;*/
 	margin-bottom: 1%;
@@ -208,12 +224,6 @@ html, body {
 	opacity: 1;
 }
 
-.getBack {
-	margin: 0;
-	text-align: left;
-	width: 75%;
-	margin: auto;
-}
 #footer {
 	text-align: center;
 	padding-top: 50px;

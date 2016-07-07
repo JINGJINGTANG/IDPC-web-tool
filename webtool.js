@@ -2,9 +2,6 @@ var idpc = angular.module('idpc', [])
 	.controller('mainCtrl', function($scope) {
 		$scope.variables = ['Policies & Procedures', 'Team Composition', 'Provider Remuneration', 'Team Funding', 'Team Governance'];
 		$scope.outcomes = ['Team Process', 'Health Services Process', 'Diabetes Care', 'Hypertension Care', 'Ashma Care', 'Ischemic Heart Disease Care', 'Other Chronic Disease Mgmt Outcomes'];
-		$scope.views = {
-						layerOne: "layerOne.html"
-					   };
 
 		$scope.studies = [{id: 'pp_tp', study: 'Example Text'},
 						  {id: 'tc_tp', study: 'Example Text'},
@@ -17,23 +14,24 @@ var idpc = angular.module('idpc', [])
 						  ];
 
 		$scope.toLayerTwo = function(id) {
-			$scope.views = {
-						layerOne: "layerTwo.html"
-					   };
+			$('#layer_one').fadeOut();
+			$('.getBack').fadeIn();
+			$('#layer_two').fadeIn();
+
 		};
 
 		$scope.toLayerOne = function(id) {
-			$scope.views = {
-						layerOne: "layerOne.html"
-					   };
+			$("#layer_two").fadeOut();
+			$('.getBack').fadeOut();
+			$('#layer_one').fadeIn();
 		};
 
 
 
 	});
 
-
-
+$('#layer_two').hide();
+$('.getBack').hide();
 
 
 
