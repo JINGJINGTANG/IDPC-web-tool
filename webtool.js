@@ -1,5 +1,7 @@
 var idpc = angular.module('idpc', [])
 	.controller('mainCtrl', function($scope) {
+
+		//These are the variables that stores headings and studies, will be updated when data is available
 		$scope.variables = ['Policies & Procedures', 'Team Composition', 'Provider Remuneration', 'Team Funding', 'Team Governance'];
 		$scope.outcomes = ['Team Process', 'Health Services Process', 'Diabetes Care', 'Hypertension Care', 'Ashma Care', 'Ischemic Heart Disease Care', 'Other Chronic Disease Mgmt Outcomes'];
 
@@ -12,7 +14,7 @@ var idpc = angular.module('idpc', [])
 						  {id: 'tc_dc', study: 'Example Text'},
 						  {id: 'pr_dc', study: 'Example Text'}
 						  ];
-
+		// Hide layer one and display layer 2
 		$scope.toLayerTwo = function(id) {
 			$('#layer_one').fadeOut();
 			$('.getBack').fadeIn();
@@ -20,6 +22,7 @@ var idpc = angular.module('idpc', [])
 
 		};
 
+		// When back is clicked in layer 2, hide layer 2 and show layer 1
 		$scope.toLayerOne = function(id) {
 			$("#layer_two").fadeOut();
 			$('.getBack').fadeOut();
@@ -30,6 +33,7 @@ var idpc = angular.module('idpc', [])
 
 	});
 
+// Hide layer 2 and back button at default
 $('#layer_two').hide();
 $('.getBack').hide();
 
@@ -63,17 +67,20 @@ $('.getBack').hide();
 // 	}
 // }
 
+// This is the scroll down effect at the start page
 $('#click').on('click', function() {
 	var targetOffset = $('#wrapper').offset().top - 65;
 	$('html, body').animate({scrollTop:targetOffset}, 800);
 
 });
 
+// This scrolls up to the start page when click the title
 $('#navbar h2').on('click', function() {
 	var targetOffset = $('#header').offset().top - 65;
 	$('html, body').animate({scrollTop:targetOffset}, 800);
 });
 
+// This adds background to the nav bar and makes it more visible
 $(window).scroll(function() {
     if ($("#navbar").offset().top > 50) {
         $("#navbar").addClass("navbar_scroll");
