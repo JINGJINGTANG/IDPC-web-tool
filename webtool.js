@@ -2,9 +2,18 @@ var idpc = angular.module('idpc', [])
 	.controller('mainCtrl', function($scope) {
 
 		//These are the variables that stores headings and studies, will be updated when data is available
-		$scope.variables = ['Policies & Procedures', 'Team Composition', 'Provider Remuneration', 'Team Funding', 'Team Governance'];
-		$scope.outcomes = ['Team Process', 'Health Services Process', 'Diabetes Care', 'Hypertension Care', 'Ashma Care', 'Ischemic Heart Disease Care', 'Other Chronic Disease Mgmt Outcomes'];
-
+		$scope.variables = ['', 'Policies & Procedures', 'Team Composition', 'Provider Remuneration', 'Team Funding', 'Team Governance'];
+		//$scope.outcomes = ['Team Process', 'Health Services Process', 'Diabetes Care', 'Hypertension Care', 'Ashma Care', 'Ischemic Heart Disease Care', 'Other Chronic Disease Mgmt Outcomes'];
+		
+		$scope.results = [{outcome: 'Team Process',                        study: ['Example Study 1', 'Example Study 2', 'Example Study 3', 'Example Study 4', 'Example Study 5']},
+						  {outcome: 'Health Services Process',             study: ['Example Study 1', 'Example Study 2', 'Example Study 3', 'Example Study 4', 'Example Study 5']},
+						  {outcome: 'Diabetes Care',                       study: ['Example Study 1', 'Example Study 2', 'Example Study 3', 'Example Study 4', 'Example Study 5']},
+						  {outcome: 'Hypertension Care',                   study: ['Example Study 1', 'Example Study 2', 'Example Study 3', 'Example Study 4', 'Example Study 5']},
+						  {outcome: 'Ashma Care',                          study: ['Example Study 1', 'Example Study 2', 'Example Study 3', 'Example Study 4', 'Example Study 5']},
+						  {outcome: 'Ischemic Heart Disease Care',         study: ['Example Study 1', 'Example Study 2', 'Example Study 3', 'Example Study 4', 'Example Study 5']},
+						  {outcome: 'Other Chronic Disease Mgmt Outcomes', study: ['Example Study 1', 'Example Study 2', 'Example Study 3', 'Example Study 4', 'Example Study 5']},
+						 ];
+						 
 		$scope.studies = [{id: 'pp_tp', study: 'Example Text'},
 						  {id: 'tc_tp', study: 'Example Text'},
 						  {id: 'pr_tp', study: 'Example Text'},
@@ -17,8 +26,8 @@ var idpc = angular.module('idpc', [])
 		// Hide layer one and display layer 2
 		$scope.toLayerTwo = function(id) {
 			$('#layer_one').fadeOut();
-			$('.getBack').fadeIn();
 			$('#layer_two').fadeIn();
+			$('.getBack').fadeIn();
 
 		};
 

@@ -80,7 +80,7 @@
 			<div class="innerwrap">
 				<!-- This layer_one is the first layer of the tool -->
 				<div id="layer_one">
-					<div class="labels outcomes"></div>
+<!-- 					<div class="labels outcomes"></div>
 					<div class="labels variables first" ng-repeat="variable in variables">
 						<span class="label label-info">{{ variable }}</span>
 					</div>
@@ -112,14 +112,129 @@
 					<div class="labels outcomes header front"><span class="label label-warning"> {{ outcomes[6] }}</span></div>
 					<div class="entries one" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 5" ng-click="toLayerTwo(study.id)">
 						<span class="studies">{{ study.study }}</span>
-					</div>
+					</div> -->
+					<style>
+					table {
+						width: 100%;
+						border-spacing: 10px;
+						border-collapse: separate;
+
+					}
+					th:not(:first-child) {
+						text-align: center;
+						color: white;
+						font-size: 1.2em;
+						font-weight: 700;
+						background-color: #5bc0de;
+					}
+
+					th, td {
+						padding: 20px;
+						border-radius: 15px;
+					}
+
+					.out {
+						color: white;
+						width: 20%;
+						font-size: 1.2em;
+						font-weight: 700;
+						background-color: orange;
+					}
+					.study:hover {
+						cursor: pointer;
+						box-shadow: 5px 5px 5px #666666;
+						opacity: 1;
+					}
+					.study {
+						border-radius: 15px;
+						border: 1px solid #999;
+						width: 16%;
+						font-size: 1.5em;
+						opacity: 0.8;
+						box-shadow: 5px 5px 5px #999;
+					}
+
+@media only screen and (max-width: 800px) {
+
+.intro {
+	font-size: 4em;
+	bottom: 50%;
+}
+
+.description {
+	font-size: 0.3em;
+}
+
+
+.innerwrap {
+	width: 100%;
+}
+
+table, thead, tbody,tr, th, td {
+	display: block;
+	margin: auto;
+}
+
+thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	td { 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 20px;
+		left: 10px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	td:nth-of-type(2):before { content: "Policies & Procedures"; color: #5bc0de; }
+	td:nth-of-type(3):before { content: "Team Composition"; color: #5bc0de; }
+	td:nth-of-type(4):before { content: "Provider Remuneration"; color: #5bc0de; }
+	td:nth-of-type(5):before { content: "Team Funding"; color: #5bc0de; }
+	td:nth-of-type(6):before { content: "Team Governance"; color: #5bc0de; }
+
+.out {
+	width: 90%;
+	padding-left: 0;
+}
+
+.study {
+	width: 90%;
+	opacity: 1;
+}
+}
+
+					</style>
+
+					<table>
+						<thead>
+							<tr>
+								<th ng-repeat="variable in variables">{{ variable }}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="result in results">
+								<td class="out">{{ result.outcome }}</td>
+								<td class="study" ng-repeat="study in result.study" ng-click="toLayerTwo()">{{ study }}</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 
 
 
 				<!-- This layer_two is the second layer of the tool. It is hidden at default and shows after click the first layer -->
 				<div id="layer_two">
-					<div class="labels outcomes back"></div>
+<!-- 					<div class="labels outcomes back"></div>
 					<div class="labels variables second">
 						<span class="label label-info">Clear Common Goals</span>
 					</div>
@@ -142,13 +257,47 @@
 					<div class="entries two" ng-repeat="study in studies" id="{{study.id}}" ng-if="$index < 3" ng-click="toLayerTwo(study.id)">
 						<span class="studies">{{ study.study }}</span>
 					</div>
+				</div> -->
+
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Clear Common Goals</th>
+							<th>Roles & Responsibilities</th>
+							<th>Process Guidelines</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="out">Perception of Team</td>
+							<td class="study" data-toggle="modal" data-target="#ex1">Example Study</td>
+							<td class="study">Example Study</td>
+							<td class="study">Example Study</td>
+						</tr>
+						<tr>
+							<td class="out">Functioning</td>
+							<td class="study">Example Study</td>
+							<td class="study">Example Study</td>
+							<td class="study">Example Study</td>
+						</tr>
+						<tr>
+							<td class="out">Measured Team Functioning</td>
+							<td class="study">Example Study</td>
+							<td class="study">Example Study</td>
+							<td class="study">Example Study</td>
+						</tr>
+					</tobdy>
+				</table>
+
+				<!-- This is the back button in layer2 that redirects to layer 1 -->
+				<div class="change">
+					<div class="getBack" ng-click="toLayerOne()"><button class="btn btn-default btn-lg">Back</button>
+					</div>
 				</div>
 
-			<!-- This is the back button in layer2 that redirects to layer 1 -->
-			<div class="change">
-				<div class="getBack" ng-click="toLayerOne()"><button class="btn btn-default btn-lg">Back</button>
-				</div>
-			</div>
+
 
 					<!-- This is the third layer. A modal pops up when clicking. -->
 					<div id="ex1" class="modal fade" role="dialog">
@@ -186,6 +335,8 @@
 				        </div>
 				      </div>
 			    	</div>
+
+
     		</div>
 		</div>
 
